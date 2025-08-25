@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: falco
   source:
-    repoURL: https://falcosecurity.github.io/charts
+    repoURL: https://github.com/falcosecurity/charts/falco
     targetRevision: 6.2.5
     helm:
       releaseName: falco
