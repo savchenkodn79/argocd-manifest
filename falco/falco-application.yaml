@@ -7,6 +7,9 @@ metadata:
     name: falco
 spec:
   project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: falco
   source:
     repoURL: https://falcosecurity.github.io/charts
     targetRevision: 1.10.0
@@ -23,3 +26,7 @@ spec:
           value: "/etc/falco/falco.yaml"
         - name: tty.enabled
           value: "true"
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
