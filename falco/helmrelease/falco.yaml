@@ -21,11 +21,3 @@ spec:
           value: "/etc/falco/falco.yaml"
         - name: tty.enabled
           value: "true"
-        - name: tty.port
-          value: "2000"
-        - name: tty.host
-          value: "0.0.0.0"
-        - name: tty.tls.enabled
-          value: "false"
-        - name: tty.tls.cert
-          value: "/etc/falco/tty.crt"
