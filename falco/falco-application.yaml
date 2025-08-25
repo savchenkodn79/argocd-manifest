@@ -15,18 +15,17 @@ spec:
     targetRevision: 1.10.0
     helm:
       releaseName: falco
-      parameters:
-        - name: falco.enabled
-          value: "true"
-        - name: falco.rules.enabled
-          value: "true"
-        - name: falco.rules.file.enabled
-          value: "true"
-        - name: falco.rules.file.path
-          value: "/etc/falco/falco.yaml"
-        - name: tty.enabled
-          value: "true"
-    syncPolicy:
-      automated:
-        prune: true
-        selfHeal: true
+      values: |
+        falco:
+          enabled: true
+        falco.rules:
+          enabled: true
+        falco.rules.file:
+          enabled: true
+          path: "/etc/falco/falco.yaml"
+        tty:
+          enabled: true
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
